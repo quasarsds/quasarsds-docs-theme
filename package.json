@@ -1,0 +1,12 @@
+{
+  "name": "quasarsds-docs-theme",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tema común de los sitios de documentación de QuasarSDS (se usa como submódulo Git).",
+  "scripts": {
+    "test": "node --test scripts/check-access.test.mjs"
+  },
+  "engines": {
+    "node": ">=20.0"
+  }
+}

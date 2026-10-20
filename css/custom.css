@@ -1,0 +1,101 @@
+/**
+ * Tema QuasarSDS — paleta derivada del logo (navy profundo + cian/azul eléctrico).
+ * Infima (el framework CSS de Docusaurus) se controla con variables --ifm-*.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --qs-navy-950: #070e17;
+  --qs-navy-900: #0d1824;
+  --qs-navy-800: #142333;
+  --qs-navy-700: #1a3a5c;
+  --qs-blue: #1f6fd1;
+  --qs-cyan: #22c3e6;
+  --qs-cyan-soft: #7fe3f7;
+  --qs-gradient: linear-gradient(120deg, #1f6fd1 0%, #22c3e6 100%);
+
+  --ifm-color-primary: #1a6fc9;
+  --ifm-color-primary-dark: #1764b5;
+  --ifm-color-primary-darker: #165eab;
+  --ifm-color-primary-darkest: #124e8d;
+  --ifm-color-primary-light: #2b7fd9;
+  --ifm-color-primary-lighter: #3887dc;
+  --ifm-color-primary-lightest: #5e9ee3;
+
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-code-font-size: 90%;
+  --ifm-navbar-height: 4rem;
+  --ifm-global-radius: 8px;
+  --docusaurus-highlighted-code-line-bg: rgba(31, 111, 209, 0.12);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #22c3e6;
+  --ifm-color-primary-dark: #18b2d4;
+  --ifm-color-primary-darker: #17a8c8;
+  --ifm-color-primary-darkest: #138aa5;
+  --ifm-color-primary-light: #41cdeb;
+  --ifm-color-primary-lighter: #50d1ed;
+  --ifm-color-primary-lightest: #7cdcf1;
+
+  --ifm-background-color: var(--qs-navy-900);
+  --ifm-background-surface-color: var(--qs-navy-950);
+  --ifm-navbar-background-color: rgba(7, 14, 23, 0.85);
+  --ifm-footer-background-color: var(--qs-navy-950);
+  --ifm-toc-border-color: #1e3247;
+  --ifm-color-emphasis-300: #23384e;
+  --ifm-hover-overlay: rgba(34, 195, 230, 0.07);
+  --docusaurus-highlighted-code-line-bg: rgba(34, 195, 230, 0.15);
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.navbar__logo {
+  height: 2.2rem;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: var(--qs-navy-950);
+  border-top: 1px solid #1e3247;
+}
+
+/* Encabezados de documentación */
+.markdown h1:first-child {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.markdown h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Tablas más legibles */
+.markdown table {
+  display: table;
+  width: 100%;
+  font-size: 0.92rem;
+}
+
+.markdown table th {
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Admonitions con el acento de marca */
+.theme-admonition-tip {
+  border-left-color: var(--qs-cyan);
+}
