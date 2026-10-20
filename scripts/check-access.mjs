@@ -49,7 +49,10 @@ export async function checkUrl(url, {fetchImpl = fetch} = {}) {
     }
     return {url, ok: false, detail: `${res.status} → ${location || '(sin Location)'} (no es Cloudflare Access)`};
   }
-  return {url, ok: false, detail: `${res.status} — ¡sirve contenido sin autenticación!`};
+  if (res.status >= 200 && res.status < 300) {
+    return {url, ok: false, detail: `${res.status} — ¡sirve contenido sin autenticación!`};
+  }
+  return {url, ok: false, detail: `${res.status} — responde sin pasar por Cloudflare Access`};
 }
 
 export async function checkAll({hosts, paths}, opts) {

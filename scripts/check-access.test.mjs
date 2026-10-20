@@ -28,7 +28,9 @@ test('redirección a otro sitio → fallo', async () => {
 });
 
 test('404 o error de red → fallo (no se puede demostrar que está protegida)', async () => {
-  assert.equal((await checkUrl('https://p.example/', {fetchImpl: fake(404)})).ok, false);
+  const r404 = await checkUrl('https://p.example/', {fetchImpl: fake(404)});
+  assert.equal(r404.ok, false);
+  assert.match(r404.detail, /sin pasar por Cloudflare Access/);
   const boom = async () => { throw new TypeError('fetch failed', {cause: {code: 'ENOTFOUND'}}); };
   const r = await checkUrl('https://p.example/', {fetchImpl: boom});
   assert.equal(r.ok, false);
